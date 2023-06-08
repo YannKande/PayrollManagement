@@ -1,3 +1,8 @@
-public class EmployedFilePayService implements EmployedServicesImpl {
+import model.PayRequest;
+
+public interface EmployedFilePayService  {
+
+    boolean payBanking(PayRequest request);
+
 
 }
