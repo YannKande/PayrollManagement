@@ -8,5 +8,7 @@ public class aggregator_main {
 
     public static void main(String[] args) {
         SpringApplication.run(aggregator_main.class, args);
+
+        System.out.println("hi  i'm run !");
     }
 }
