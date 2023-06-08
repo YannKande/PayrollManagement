@@ -10,7 +10,7 @@
     </parent>
 
     <groupId>com.csc</groupId>
-    <artifactId>agentserives</artifactId>
+    <artifactId>employedserives</artifactId>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>

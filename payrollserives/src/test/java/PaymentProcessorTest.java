@@ -1,12 +1,18 @@
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.springframework.beans.factory.annotation.Autowired;
 import processor.PaymentProcessor;
 
 public class PaymentProcessorTest {
 
+
+
+PaymentProcessor paymentProcessor = new PaymentProcessor();
+
     @Test
     public void testValidPayment() {
-        PaymentProcessor paymentProcessor = new PaymentProcessor();
 
         String cardNumber = "1234567890123456";
         String expirationDate = "12/25";
@@ -19,7 +25,6 @@ public class PaymentProcessorTest {
 
     @Test
     public void testInvalidCardNumber() {
-        PaymentProcessor paymentProcessor = new PaymentProcessor();
 
         String cardNumber = "123456"; // Invalid card number length
         String expirationDate = "12/25";
@@ -33,7 +38,6 @@ public class PaymentProcessorTest {
 
     @Test
     public void testInvalidExpirationDate() {
-        PaymentProcessor paymentProcessor = new PaymentProcessor();
 
         String cardNumber = "1234567890123456";
         String expirationDate = "15/21"; // Invalid expiration date format
@@ -47,7 +51,6 @@ public class PaymentProcessorTest {
 
     @Test
     public void testInvalidCVV() {
-        PaymentProcessor paymentProcessor = new PaymentProcessor();
 
         String cardNumber = "1234567890123456";
         String expirationDate = "12/25";

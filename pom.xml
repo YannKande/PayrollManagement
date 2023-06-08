@@ -12,7 +12,7 @@
 
     <modules>
         <module>payrollserives</module>
-        <module>agentserives</module>
+        <module>employedserives</module>
         <module>domaines</module>
         <module>middleware</module>
     </modules>
