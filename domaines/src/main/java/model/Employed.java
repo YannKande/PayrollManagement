@@ -10,11 +10,17 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Employed {
+
+
+
+
     String id;
     private String name;
+    private String email;
     private String company;
     private long functionLevel;
     private double Salary;
     private String bankAccountNumber;
+
 
 }

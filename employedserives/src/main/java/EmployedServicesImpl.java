@@ -3,16 +3,17 @@ import lombok.SneakyThrows;
 import mapper.MapperEmployed;
 import model.Employed;
 import model.PayRequest;
-import org.junit.jupiter.params.shadow.com.univocity.parsers.annotations.NullString;
 import processor.PaymentProcessor;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class EmployedServicesImpl implements  EmployedFilePayService{
 
+    List<Employed> employed;
 
-    private MapperEmployed mock;
+     MapperEmployed mock;
     ObjectMapper mapper=new ObjectMapper();
     private final SalaryCalculator calculator;
    private final PaymentProcessor paymentProcessor;
@@ -45,16 +46,29 @@ public class EmployedServicesImpl implements  EmployedFilePayService{
         return mapper.writeValueAsString(calculatorSalary);
     }
 
+    @SneakyThrows
     @Override
     public List<Employed> employed() {
-        return null;
-    }
 
+     employed=MapperEmployed.getCustomers();
+
+      if(employed.size()>0)return null;
+
+        return employed.stream()
+                .collect(Collectors.toList());
+    }
+    @SneakyThrows
     @Override
-    public Optional<Employed> getEmployedByEmail(String email) {
+    public List<Employed> getEmployedByEmail(String email) {
+
+        employed=MapperEmployed.getCustomers();
 
         if(email.isBlank() && email.length()>8)return null;
 
-        return Optional.empty();
+        List<Employed> employedStream=employed.stream()
+                .filter(a->a.getEmail().equals(email))
+                .collect(Collectors.toList());
+
+        return employedStream;
     }
 }
