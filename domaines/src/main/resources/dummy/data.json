@@ -1,0 +1,19 @@
+[
+  {
+    "id": "01",
+    "nom": "Trevor Mano  Nola",
+    "company": "csc",
+    "functionLevel": 9,
+    "Salary": 200.0,
+    "bankAccountNumber":"1209384736279"
+  },
+
+  {
+    "id": "01",
+    "nom": "yan hande",
+    "company": "csc",
+    "functionLevel": 11,
+    "Salary": 400.0,
+    "bankAccountNumber":"1209384736329"
+  }
+]

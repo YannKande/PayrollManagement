@@ -1,3 +1,4 @@
+import mapper.MapperEmployed;
 import model.PayRequest;
 import org.junit.jupiter.api.Test;
 
@@ -11,10 +12,12 @@ class EmployedServicesImplTest {
     private EmployedServicesImpl employedServices;
     private PaymentProcessor paymentProcessor;
     private SalaryCalculator salaryCalculator;
+
+    private MapperEmployed mock;
     @BeforeEach
     void setUp() {
         paymentProcessor = mock(PaymentProcessor.class);
-        employedServices = new EmployedServicesImpl(salaryCalculator, paymentProcessor);
+        employedServices = new EmployedServicesImpl(salaryCalculator, paymentProcessor,mock);
     }
 
     @Test
