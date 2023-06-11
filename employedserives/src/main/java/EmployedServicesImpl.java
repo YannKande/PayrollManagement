@@ -1,25 +1,23 @@
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.SneakyThrows;
-import mapper.MapperEmployed;
+import mapper.MapperEmployedList;
 import model.Employed;
 import model.PayRequest;
 import processor.PaymentProcessor;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class EmployedServicesImpl implements  EmployedFilePayService{
 
     List<Employed> employed;
-
-     MapperEmployed mock;
+    MapperEmployedList mock;
     ObjectMapper mapper=new ObjectMapper();
     private final SalaryCalculator calculator;
    private final PaymentProcessor paymentProcessor;
 
     public EmployedServicesImpl(SalaryCalculator calculator, PaymentProcessor paymentProcessor,
-                                MapperEmployed mock) {
+                                MapperEmployedList mock) {
         this.calculator = calculator;
         this.paymentProcessor = paymentProcessor;
         this.mock=mock;
@@ -38,19 +36,19 @@ public class EmployedServicesImpl implements  EmployedFilePayService{
 
     @SneakyThrows
     @Override
-    public String paymentEmployed(PayRequest request) {
+    public Double paymentEmployed(PayRequest request) {
 
-        double  calculatorSalary=calculator.calculatorPaySalary(
+        double calculatorSalary=calculator.calculatorPaySalary(
                 request.getSalary(),
                 31, request.getDayWorks());
-        return mapper.writeValueAsString(calculatorSalary);
+        return calculatorSalary;
     }
 
     @SneakyThrows
     @Override
     public List<Employed> employed() {
 
-     employed=MapperEmployed.getCustomers();
+     employed= MapperEmployedList.getCustomers();
 
       if(employed.size()>0)return null;
 
@@ -61,7 +59,7 @@ public class EmployedServicesImpl implements  EmployedFilePayService{
     @Override
     public List<Employed> getEmployedByEmail(String email) {
 
-        employed=MapperEmployed.getCustomers();
+        employed= MapperEmployedList.getCustomers();
 
         if(email.isBlank() && email.length()>8)return null;
 

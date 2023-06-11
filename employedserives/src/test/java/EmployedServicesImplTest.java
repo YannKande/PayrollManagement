@@ -1,4 +1,4 @@
-import mapper.MapperEmployed;
+import mapper.MapperEmployedList;
 import model.Employed;
 import model.PayRequest;
 import org.junit.jupiter.api.BeforeEach;
@@ -14,7 +14,7 @@ import static org.mockito.Mockito.*;
 public class EmployedServicesImplTest {
     private SalaryCalculator salaryCalculatorMock;
     private PaymentProcessor paymentProcessorMock;
-    private MapperEmployed mapperEmployedMock;
+    private MapperEmployedList mapperEmployedListMock;
     private EmployedServicesImpl employedServices;
 
     PayRequest request;
@@ -22,12 +22,12 @@ public class EmployedServicesImplTest {
     public void setUp() {
         salaryCalculatorMock = mock(SalaryCalculator.class);
         paymentProcessorMock = mock(PaymentProcessor.class);
-        mapperEmployedMock = mock(MapperEmployed.class);
+        mapperEmployedListMock = mock(MapperEmployedList.class);
 
         employedServices = new EmployedServicesImpl(
                 salaryCalculatorMock,
                 paymentProcessorMock,
-                mapperEmployedMock
+                mapperEmployedListMock
         );
 
      request =  PayRequest.builder()
@@ -68,12 +68,12 @@ public class EmployedServicesImplTest {
     @Test
     public void testEmployed() throws Exception {
         List<Employed> mockEmployed = new ArrayList<>();
-        when(mapperEmployedMock.getCustomers()).thenReturn(mockEmployed);
+        when(mapperEmployedListMock.getCustomers()).thenReturn(mockEmployed);
 
         List<Employed> result = employedServices.employed();
 
         assertEquals(mockEmployed, result);
-        verify(mapperEmployedMock).getCustomers();
+        verify(mapperEmployedListMock).getCustomers();
     }
 
     @Test
@@ -91,6 +91,6 @@ public class EmployedServicesImplTest {
         List<Employed> result = employedServices.getEmployedByEmail(email);
 
         assertEquals(mockEmployed, result);
-        verify(mapperEmployedMock).getCustomers();
+        verify(mapperEmployedListMock).getCustomers();
     }
 }

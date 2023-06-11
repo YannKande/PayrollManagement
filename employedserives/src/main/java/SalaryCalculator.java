@@ -1,5 +1,6 @@
-public class SalaryCalculator {
 
+
+public class SalaryCalculator {
 
     public  double CalculatorBaseSalary(int daysWork, double daySalary){
         return daysWork*daySalary;
@@ -7,6 +8,5 @@ public class SalaryCalculator {
     public  double calculatorPaySalary(double basicSalary,int promiseDays , int presentDays) {
         return basicSalary / promiseDays * presentDays;
     }
-
 
 }

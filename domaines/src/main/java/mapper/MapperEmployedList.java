@@ -12,7 +12,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MapperEmployed {
+public class MapperEmployedList {
 
     public static List<Employed> getCustomers() throws IOException {
         InputStream inputStream = Resources.getResource("dummy/data.json").openStream();

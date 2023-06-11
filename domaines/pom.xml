@@ -23,6 +23,12 @@
             <artifactId>junit-jupiter</artifactId>
             <version>5.9.2</version>
         </dependency>
+        <dependency>
+            <groupId>com.csc</groupId>
+            <artifactId>employedserives</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
 </project>

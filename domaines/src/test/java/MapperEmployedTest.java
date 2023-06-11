@@ -1,18 +1,12 @@
 
 import com.google.common.io.Resources;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-import mapper.MapperEmployed;
 import model.Employed;
-import org.apache.commons.io.IOUtils;
 import org.junit.jupiter.api.Test;
 
 
 import java.io.IOException;
 
 import java.io.InputStream;
-import java.lang.reflect.Type;
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
