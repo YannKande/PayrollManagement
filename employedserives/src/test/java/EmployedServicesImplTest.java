@@ -59,7 +59,7 @@ public class EmployedServicesImplTest {
 
         when(salaryCalculatorMock.calculatorPaySalary(1000.0, 31, request.getDayWorks())).thenReturn(900.0);
 
-        String result = employedServices.paymentEmployed(request);
+        double result = employedServices.paymentEmployed(request);
 
         assertEquals("900.0", result);
         verify(salaryCalculatorMock).calculatorPaySalary(1000.0, 31, request.getDayWorks());
