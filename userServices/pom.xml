@@ -10,7 +10,7 @@
     </parent>
 
     <groupId>com.csc</groupId>
-    <artifactId>middleware</artifactId>
+    <artifactId>userServices</artifactId>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -19,31 +19,11 @@
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>
-            <version>5.9.2</version>
-        </dependency>
-        <dependency>
             <groupId>com.csc</groupId>
             <artifactId>domaines</artifactId>
             <version>0.0.1-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
-
-        <dependency>
-            <groupId>com.csc</groupId>
-            <artifactId>employedserives</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.csc</groupId>
-            <artifactId>userServices</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-            <scope>compile</scope>
-        </dependency>
-
-
     </dependencies>
 
 </project>

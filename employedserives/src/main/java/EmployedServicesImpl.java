@@ -8,7 +8,7 @@ import processor.PaymentProcessor;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Service
+
 public class EmployedServicesImpl implements  EmployedFilePayService{
 
     List<Employed> employed;

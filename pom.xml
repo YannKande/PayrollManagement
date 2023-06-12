@@ -23,6 +23,7 @@
         <module>middleware</module>
         <module>payrollserives</module>
         <module>employedserives</module>
+        <module>userServices</module>
 
 
     </modules>
