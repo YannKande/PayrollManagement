@@ -44,15 +44,13 @@ public class EmployedMapper {
     }
 
 
-    public  static EmployedFilepay toPayFile(Employed employed, PayRequest payRequest){
+    public  static EmployedFilepay toPayFile(Employed employed){
 
         EmployedFilepay employedFilepay=new EmployedFilepay();
 
         if (employed!=null){
-
             employedFilepay.setEmployed(employed);
-            employedFilepay.setTotalSalary(payRequest.getSalary());
-
+            employedFilepay.setTotalSalary(employed.getSalary());
             return employedFilepay;
         }
 

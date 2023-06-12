@@ -1,0 +1,18 @@
+[
+
+  {
+    "id": "01",
+    "username": "yan hande",
+    "login": "yannickkandee@gmail.com",
+    "password": "csc",
+   "role": "admin"
+  },
+
+  {
+    "id": "0@",
+    "username": "Tremor",
+    "login": "tresor@gmail.com",
+    "password": "csc",
+    "role": "user"
+  }
+]

@@ -18,10 +18,13 @@
     </properties>
 
     <modules>
-        <module>payrollserives</module>
-        <module>employedserives</module>
+
         <module>domaines</module>
         <module>middleware</module>
+        <module>payrollserives</module>
+        <module>employedserives</module>
+
+
     </modules>
 
     <groupId>com.example</groupId>

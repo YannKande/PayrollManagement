@@ -3,11 +3,12 @@ import lombok.SneakyThrows;
 import mapper.MapperEmployedList;
 import model.Employed;
 import model.PayRequest;
+import org.springframework.stereotype.Service;
 import processor.PaymentProcessor;
-
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Service
 public class EmployedServicesImpl implements  EmployedFilePayService{
 
     List<Employed> employed;
@@ -22,7 +23,6 @@ public class EmployedServicesImpl implements  EmployedFilePayService{
         this.paymentProcessor = paymentProcessor;
         this.mock=mock;
     }
-
 
     @Override
     public Boolean payBanking(PayRequest request) {
