@@ -61,7 +61,7 @@ public class EmployedServicesImpl implements  EmployedFilePayService{
 
         employed= MapperEmployedList.getCustomers();
 
-        if(email.isBlank() && email.length()>8)return null;
+        if(email.isEmpty() && email.length()>8)return null;
 
         List<Employed> employedStream=employed.stream()
                 .filter(a->a.getEmail().equals(email))

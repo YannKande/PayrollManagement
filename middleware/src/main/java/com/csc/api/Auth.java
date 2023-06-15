@@ -25,7 +25,7 @@ public class Auth {
 
         String user=services.login(request);
 
-        if(!user.isBlank()) return new String(mapper.writeValueAsString(user));
+        if(!user.isEmpty()) return new String(mapper.writeValueAsString(user));
 
         return ResponseEntity.notFound().toString();
     }
